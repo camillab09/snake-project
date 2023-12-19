@@ -1,7 +1,7 @@
 let grid = document.querySelector(".grid");
 let popup = document.querySelector(".popup");
 let playAgain = document.querySelector(".playAgain");
-let scoreDisplay = document.getElementById(".scoreDisplay");
+let scoreDisplay = document.querySelector(".scoreDisplay");
 let left = document.querySelector(".left");
 let bottom = document.querySelector(".bottom");
 let right = document.querySelector(".right");
@@ -91,23 +91,23 @@ function eatApple(squares, tail) {
 function randomApple(squares) {
   do {
     appleIndex = Math.floor(Math.random() * squares.length);
-  } while (squares[appleIndex].classList.contains("snake)"));
+  } while (squares[appleIndex].classList.contains("snake"));
   squares[appleIndex].classList.add("apple");
 }
 function control(e) {
-  if (e.keycode === 39) {
+  if (e.keyCode === 39) {
     direction = 1;
-  } else if (e.keycode === 38) {
+  } else if (e.keyCode === 38) {
     direction = -width;
-  } else if (e.keycode === 37) {
+  } else if (e.keyCode === 37) {
     direction = -1;
-  } else if (e.keycode === 40) {
+  } else if (e.keyCode === 40) {
     direction = +width;
   }
 }
 
 up.addEventListener("click", () => (direction = -width));
-bottom.addEventListenere("click", () => (direction = +width));
+bottom.addEventListener("click", () => (direction = +width));
 left.addEventListener("click", () => (direction = -1));
 right.addEventListener("click", () => (direction = 1));
 
